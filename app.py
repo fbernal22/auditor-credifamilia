@@ -113,7 +113,7 @@ def analisis_metadatos(archivo_bytes):
 # --- 4. IA (MODELO FLASH 1.5) ---
 def obtener_mejor_modelo(key):
     genai.configure(api_key=key)
-    return genai.GenerativeModel('gemini-1.5-flash'), "Flash ⚡"
+    return genai.GenerativeModel('gemini-2.5-flash'), "Flash ⚡"
 
 def analizar_riesgo_total(archivo_pdf, modelo):
     texto = ""
@@ -361,4 +361,5 @@ if uploaded_file:
                     data=generar_excel_completo(datos, sj, rj, ss, rs, rep_pag["log"]),
                     file_name="Reporte_Credifamilia_360.xlsx",
                     mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+
                 )
